@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { css } from "./User.module.css";
 
 export const User = ({ user }) => {
   const { name, email, bio, skills, isOpenToWork } = user;

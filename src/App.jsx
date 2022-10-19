@@ -1,5 +1,5 @@
 import userJson from "./assets/users.json";
-import { User } from "./components/User";
+import { User } from "./components/Users/User";
 import { Fragment } from "react";
 
 export const App = () => {
