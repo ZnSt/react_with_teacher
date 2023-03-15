@@ -1,0 +1,23 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+export const Post = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
+      .then((response) => response.json())
+      .then((data) => setPosts(data));
+  }, []);
+  return (
+    <div>
+      <h1>Post</h1>
+      <ul>
+        {posts.map((post) => (
+          <li className="list-decimal hover:text-blue" key={post.id}>
+            <Link to={`/post/${post.id}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
